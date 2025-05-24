@@ -46,8 +46,8 @@ background = transform.scale(image.load('galaxy.jpg'), (win_width, win_height))
 
 
 playre1 = Playre('roket.png', 5, 250, 100 , 100, 4)
-playre2 = Playre('roket2.png', 595, 230, 130 , 130, 4)
-
+playre2 = Playre('roket2.png', 590, 230, 130 , 130, 4)
+playre3 = Playre('ball.png', 320, 300, 50, 50, 2)
 
 
 
@@ -64,6 +64,8 @@ while run:
     playre1.update_l()
     playre2.reset()
     playre2.update_r()
+    playre3.reset()
+    playre3.update()
     # monsters.draw(window)
     # monsters.update()
     # bullets.draw(window)

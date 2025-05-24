@@ -28,7 +28,7 @@ class Playre(GameSprits):
         if keys[K_RIGHT] and self.rect.x < win_width - 80:
             self.rect.x += self.speed
     def fire(self):
-        bullet = Bullet('bullet.png', self. rect.centerx, self.rect.top, 25,50,10 )
+        bullet = Bullet('bullet3.png', self. rect.centerx, self.rect.top, 30,50,10 )
         bullets.add(bullet)
         bullet_Sound.play()
 
@@ -58,14 +58,14 @@ class Bullet(GameSprits):
 
 window = display.set_mode((win_width, win_height))
 display.set_caption('Shuter Game')
-background = transform.scale(image.load('galaxy.jpg'), (win_width, win_height))
+background = transform.scale(image.load('galaxy2.jpg'), (win_width, win_height))
         
-playre = Playre('roket.png', 5, win_height - 110, 100 , 100, 10)
+playre = Playre('roket3.png', 5, 370, 140 , 120, 10)
 
 
 monsters = sprite.Group()
 for i in range(1, 6):
-    monster = Enemy('ufo.png', randint(80, win_width - 80), -40, 50, 50, randint(1, 3))
+    monster = Enemy('ufo2.png', randint(80, win_width - 80), -40, 85, 85, randint(1, 3))
     monsters.add(monster)
 
 bullets = sprite.Group()
@@ -113,7 +113,7 @@ while run:
     )
     for i in sprites_list:
         score += 1
-        monster = Enemy('ufo.png', randint(80, win_width - 80), -40, 50, 50, randint(1, 3))
+        monster = Enemy('ufo2.png', randint(80, win_width - 80), -40, 50, 50, randint(1, 3))
         monsters.add(monster)
     if score == 10:
         window.blit(Win, (200, 200))
@@ -130,8 +130,8 @@ while run:
 
 
 
-    SCORE = font.render('Сщётчик очков ' + str(score), 1, (215,215,21))
-    LOSE = font.render('Сщётчик врагов ' + str(lose), 1, (215,215,21))
+    SCORE = font.render('Сщётчик очков ' + str(score), 1, (0,0,215))
+    LOSE = font.render('Сщётчик врагов ' + str(lose), 1, (0,0,215))
     window.blit(SCORE, (0, 0))
     window.blit(LOSE, (0, 21))
     
